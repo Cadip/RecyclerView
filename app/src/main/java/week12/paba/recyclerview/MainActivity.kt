@@ -5,8 +5,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _nama : Array<String>
@@ -53,7 +55,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun TampilkanData() {
-        _rvWayang.layoutManager = LinearLayoutManager(this)
+        _rvWayang.layoutManager = StaggeredGridLayoutManager(2,
+            LinearLayoutManager.VERTICAL)
         _rvWayang.adapter = adapterRecView(arWayang)
     }
 }
